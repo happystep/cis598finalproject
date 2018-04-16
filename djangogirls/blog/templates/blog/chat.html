@@ -1,8 +1,11 @@
 {% extends 'blog/base.html' %}
+{% load staticfiles %}
 
 {% block content %}
 <html>
     <body>
+        <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+        <script src="../../static/css/script.js"></script>
         <div class="col-sm-3 col-sm-offset-4 frame">
             <ul></ul>
             <div>

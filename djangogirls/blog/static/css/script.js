@@ -64,13 +64,13 @@ $(".mytext").on("keydown", function(e){
     }
 });
 
-$('body > div > div > div:nth-child(2) > span').click(function(){
+$('body > div > div > div:nth-child(2) > span').click(fu    nction(){
     $(".mytext").trigger({type: 'keydown', which: 13, keyCode: 13});
 })
 
 //-- Clear Chat
 resetChat();
-
+/*
 //-- Print Messages
 insertChat("me", "Hello Tom...", 0);
 insertChat("you", "Hi, Pablo", 1500);
@@ -79,5 +79,5 @@ insertChat("you", "Tell me a joke",7000);
 insertChat("me", "Spaceman: Computer! Computer! Do we bring battery?!", 9500);
 insertChat("you", "LOL", 12000);
 
-
+*/
 //-- NOTE: No use time on insertChat.
