@@ -1,8 +1,8 @@
 var me = {};
-me.avatar = "https://lh6.googleusercontent.com/-lr2nyjhhjXw/AAAAAAAAAAI/AAAAAAAARmE/MdtfUmC0M4s/photo.jpg?sz=48";
+me.avatar = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png";
 
 var you = {};
-you.avatar = "https://a11.t26.net/taringa/avatares/9/1/2/F/7/8/Demon_King1/48x48_5C5.jpg";
+you.avatar = "https://img.pokemondb.net/sprites/sun-moon/dex/normal/raichu-alolan.png";
 
 function formatAMPM(date) {
     var hours = date.getHours();
@@ -54,6 +54,25 @@ function resetChat(){
     $("ul").empty();
 }
 
+
+
+                $(this).val('');
+
+
+
+function on(e) {
+    if (e.which == 13) {
+        var text = document.getElementById("mytext").value;
+        if (text !== "") {
+            insertChat("me", text);
+            document.getElementById("mytext").value = "";
+        }
+
+    }
+}
+
+
+// this is not being used right now and is not involved at all.
 $(".mytext").on("keydown", function(e){
     if (e.which == 13){
         var text = $(this).val();
@@ -64,13 +83,22 @@ $(".mytext").on("keydown", function(e){
     }
 });
 
-$('body > div > div > div:nth-child(2) > span').click(fu    nction(){
+resetChat();
+
+//insertChat("me", "This work?", 0);
+
+//insertChat("you", "nope?", 1500);
+
+//this is the button that I need to remove
+/*
+$('body > div > div > div:nth-child(2) > span').click(function(){
     $(".mytext").trigger({type: 'keydown', which: 13, keyCode: 13});
 })
-
-//-- Clear Chat
-resetChat();
+*/
 /*
+//-- Clear Chat
+
+
 //-- Print Messages
 insertChat("me", "Hello Tom...", 0);
 insertChat("you", "Hi, Pablo", 1500);
