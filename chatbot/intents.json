@@ -1,6 +1,6 @@
 {"intents": [
         {"tag": "greeting",
-         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day"],
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Good morning", "Good Evening"],
          "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
          "context_set": ""
         },
@@ -39,8 +39,8 @@
          "context_filter": "rentalday"
         },
         {"tag": "master",
-        "patterns": ["I's Luis"],
-        "responses": ["Hello my Master"],
+        "patterns": ["It's Luis", "Luis", "luis", "work", "not working", "are you smart?"],
+        "responses": ["Hello my Master", "Master is here", "Now yes he is here"],
         "context_filter": "master"
           
           }
