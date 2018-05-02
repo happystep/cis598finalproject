@@ -14,3 +14,6 @@ def post_detail(request, pk):
 
 def chat(request):
     return render(request, 'blog/chat.html', {})
+
+def about(request):
+    return render(request, 'blog/about.html', {})
