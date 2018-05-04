@@ -65,20 +65,15 @@ function chatbot_response(text){
             url :'/answer/',
             type: 'POST',
             data: {
-                    'string': text
+                    'word': text
             },
             datatype: "json",
             success: function(data) {
-                insertChat("you", data);
+                insertChat("you", data.word);
             }
 
         }
-
-
-
     )
-
-
 }
 
 

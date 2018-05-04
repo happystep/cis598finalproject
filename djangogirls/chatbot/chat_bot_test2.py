@@ -2,6 +2,8 @@
 # The website above has the tutorial used to create this test python script, the interface is all written by me but the logic and the code in this file is not mine. the github is https://github.com/ugik/notebooks 
 # restore all of our data structures
 # things we need for NLP
+import sys
+sys.path.append('../')
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
@@ -12,7 +14,7 @@ import tflearn
 import tensorflow as tf
 import random
 import pickle
-data = pickle.load( open( "training_data", "rb" ) )
+data = pickle.load( open( "chatbot/training_data", "rb" ) )
 words = data['words']
 classes = data['classes']
 train_x = data['train_x']
@@ -20,7 +22,7 @@ train_y = data['train_y']
 
 # import our chat-bot intents file
 import json
-with open('intents.json') as json_data:
+with open('chatbot/intents.json') as json_data:
     intents = json.load(json_data)
 # reset underlying graph data
 tf.reset_default_graph()
@@ -36,7 +38,7 @@ model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
 model.fit(train_x, train_y, n_epoch=1000, batch_size=8, show_metric=True)
 
 # load our saved model
-model.load('./model.tflearn')
+model.load('chatbot/model.tflearn')
 
 
 def clean_up_sentence(sentence):
@@ -97,7 +99,7 @@ def response(sentence, userID='123', show_details=False):
                         (userID in context and 'context_filter' in i and i['context_filter'] == context[userID]):
                         if show_details: print ('tag:', i['tag'])
                         # a random response from the intent
-                        return print('Chatbot: ' + random.choice(i['responses']))
+                        return random.choice(i['responses'])
 
             results.pop(0)
 

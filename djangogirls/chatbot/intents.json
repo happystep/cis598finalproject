@@ -16,9 +16,9 @@
          "patterns": ["What hours are you open?", "What are your hours?", "When are you open?" ],
          "responses": ["We're open every day 9am-9pm", "Our hours are 9am-9pm every day"]
         },
-        {"tag": "mopeds",
-         "patterns": ["Which mopeds do you have?", "What kinds of mopeds are there?", "What do you rent?" ],
-         "responses": ["We rent Yamaha, Piaggio and Vespa mopeds", "We have Piaggio, Vespa and Yamaha mopeds"]
+        {"tag": "cars",
+         "patterns": ["Which cars do you have?", "What kinds of cars are there?", "What do you rent?" ],
+         "responses": ["We rent Chevy, Ford and Honda cars", "We have Chevy, Ford and Honda cars"]
         },
         {"tag": "payments",
          "patterns": ["Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?" ],
@@ -29,20 +29,14 @@
          "responses": ["We're open every day from 9am-9pm", "Our hours are 9am-9pm every day"]
         },
         {"tag": "rental",
-         "patterns": ["Can we rent a moped?", "I'd like to rent a moped", "How does this work?" ],
+         "patterns": ["Can we rent a car?", "I'd like to rent a car", "How does this work?" ],
          "responses": ["Are you looking to rent today or later this week?"],
          "context_set": "rentalday"
         },
         {"tag": "today",
          "patterns": ["today"],
-         "responses": ["For rentals today please call 1-800-MYMOPED", "Same-day rentals please call 1-800-MYMOPED"],
+         "responses": ["For rentals today please call 1-800-CARSFORME", "Same-day rentals please call 1-800-CARSFORME"],
          "context_filter": "rentalday"
-        },
-        {"tag": "master",
-        "patterns": ["It's Luis", "Luis", "luis", "work", "not working", "are you smart?"],
-        "responses": ["Hello my Master", "Master is here", "Now yes he is here"],
-        "context_filter": "master"
-          
-          }
+        }
    ]
 }
