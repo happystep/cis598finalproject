@@ -1,7 +1,9 @@
-from django.shortcuts import render
-from django.utils import timezone
-from .models import Post
 from django.shortcuts import render, get_object_or_404
+from django.utils import timezone
+
+from chatbot import chat_bot_console_interface as cb
+from .models import Post
+
 
 # Create your views here.
 def post_list(request):
@@ -17,3 +19,6 @@ def chat(request):
 
 def about(request):
     return render(request, 'blog/about.html', {})
+
+def answer(request):
+    return cb.response(request.data['string'])

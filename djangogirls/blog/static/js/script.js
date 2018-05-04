@@ -59,6 +59,28 @@ function resetChat(){
                 $(this).val('');
 
 
+function chatbot_response(text){
+    $.ajax(
+        {
+            url :'/answer/',
+            type: 'POST',
+            data: {
+                    'string': text
+            },
+            datatype: "json",
+            success: function(data) {
+                insertChat("you", data);
+            }
+
+        }
+
+
+
+    )
+
+
+}
+
 
 function on(e) {
     if (e.which == 13) {
@@ -66,6 +88,9 @@ function on(e) {
         if (text !== "") {
             insertChat("me", text);
             document.getElementById("mytext").value = "";
+            chatbot_response(text);
+
+
         }
 
     }
